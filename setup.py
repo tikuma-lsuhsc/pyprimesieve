@@ -58,12 +58,6 @@ def status_msgs(*msgs):
 # ----
 
 
-with open('README.rst') as f:
-    readme = f.read()
-
-with open('CHANGES.rst') as f:
-    changes = f.read()
-
 PRIMESIEVE_DIR = 'primesieve/src'
 PRIMESIEVE_FILES = ['EratBig.cpp', 'EratMedium.cpp', 'EratSmall.cpp', 'ParallelPrimeSieve.cpp', 'PreSieve.cpp',
                     'PrimeFinder.cpp', 'PrimeGenerator.cpp', 'PrimeSieve.cpp', 'SieveOfEratosthenes.cpp',
@@ -83,30 +77,12 @@ def run_setup(openmp):
     setup(
         name='pyprimesieve',
         version=VERSION,
-        description='Many primes, very fast. Uses primesieve.',
-        author='Jared Suttles',
-        url='https://github.com/jaredks/pyprimesieve',
-        long_description=readme + '\n\n' + changes,
-        license='BSD License',
+        packages=[''],
         cmdclass={'build_ext': ve_build_ext},
         package_data={'': ['LICENSE']},
         ext_modules=[
             Extension('pyprimesieve', sources=['pyprimesieve/pyprimesieve.cpp'] + PRIMESIEVE,
                       include_dirs=[PRIMESIEVE_DIR], **kwargs),
-        ],
-        classifiers=[
-            'Development Status :: 4 - Beta',
-            'Intended Audience :: Developers',
-            'Intended Audience :: Education',
-            'Intended Audience :: Science/Research',
-            'License :: OSI Approved :: BSD License',
-            'Operating System :: MacOS :: MacOS X',
-            'Operating System :: Microsoft :: Windows',
-            'Operating System :: POSIX',
-            'Programming Language :: Python',
-            'Programming Language :: C++',
-            'Topic :: Scientific/Engineering :: Mathematics',
-            'Topic :: Software Development :: Libraries :: Python Modules',
         ],
     )
 

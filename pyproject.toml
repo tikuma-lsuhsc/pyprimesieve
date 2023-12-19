@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools >= 61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "pyprimesieve"
+description = "Many primes, very fast. Uses primesieve."
+authors = [{ name = "Jared Suttles" }]
+readme = "README.rst"
+license = { text = "BSD License" }
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Education',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: BSD License',
+    'Operating System :: MacOS :: MacOS X',
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: POSIX',
+    'Programming Language :: Python',
+    'Programming Language :: C++',
+    'Topic :: Scientific/Engineering :: Mathematics',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+]
+dynamic = ["version"]
+
+
+[project.urls]
+Repository = "https://github.com/jaredks/pyprimesieve"
+
+# [tool.setuptools.dynamic]
+# version = { attr = "pyprimesieve.__version__" }
